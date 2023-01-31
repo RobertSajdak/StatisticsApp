@@ -1,6 +1,6 @@
 namespace StatisticsApp.Tests
 {
-    public class Tests
+    public class UserTests
     {
         [Test]
         public void WhenUserCollectTwoScores_ShouldCorrectResult()

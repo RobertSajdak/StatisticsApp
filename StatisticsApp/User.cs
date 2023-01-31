@@ -11,9 +11,16 @@ public class User
         this.Age = age;
     }
 
+    public User(string login)
+    {
+        this.Login = login;
+    }
+
+
     public string Name { get; private set; }
     public string Surname { get; private set; }
     public int Age { get; private set; }
+    public string Login { get; private set; }
 
     public int Result
     {
