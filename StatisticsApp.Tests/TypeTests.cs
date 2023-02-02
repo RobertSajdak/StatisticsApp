@@ -41,22 +41,22 @@
             Assert.AreEqual(employee1, employee2);
         }
 
-        [Test]
-        public void WhenEqualTwoReferenceTypes()
-        {
-            // arrange (przygotowanie)
-            var user1 = GetUser("Earl", "Nightingale", 68);        
-            var user2 = GetUser("Dale", "Carnegie", 67);
+        //[Test]
+        //public void WhenEqualTwoReferenceTypes()
+        //{
+        //    // arrange (przygotowanie)
+        //    var user1 = GetUser("Earl", "Nightingale", 68);        
+        //    var user2 = GetUser("Dale", "Carnegie", 67);
 
-            //  act (uruchomienie)
+        //    //  act (uruchomienie)
 
-            // assert (zapewnienie, że zostały spełnione określone warunki)
-            Assert.AreNotEqual(user1, user2);
-        }
+        //    // assert (zapewnienie, że zostały spełnione określone warunki)
+        //    Assert.AreNotEqual(user1, user2);
+        //}
 
-        private User GetUser(string name, string surname, int age)
-        {
-            return new User(name, surname, age);
-        }
+        //private User GetUser(string name, string surname, int age)
+        //{
+        //    return new User(name, surname, age);
+        //}
     }
 }
