@@ -1,8 +1,11 @@
 ﻿using StatisticsApp;
 
 var employee = new Employee("Robert", "Sajdak");
-employee.AddGrade(8);
-employee.AddGrade(3);
+employee.AddGrade("Michael");
+employee.AddGrade("200");
+employee.AddGrade(9L);
+employee.AddGrade(8f);
+employee.AddGrade(2);
 employee.AddGrade(6);
 
 var statistics = employee.GetStatistics();
