@@ -29,7 +29,7 @@ namespace StatisticsApp
             }
             else
             {
-                Console.WriteLine("Invalid grade value!");
+                throw new Exception("Invalid grade value!");
             }           
         }
 
@@ -41,7 +41,7 @@ namespace StatisticsApp
             }
             else
             {
-                Console.WriteLine("String is not float.");
+                throw new Exception("String is not float.");
             }
         }
 
@@ -54,7 +54,7 @@ namespace StatisticsApp
             }
             else
             {
-                Console.WriteLine("Invalid grade value!");
+                throw new Exception("Invalid grade value!");
             }
         }
 
@@ -89,8 +89,7 @@ namespace StatisticsApp
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong letter!"); ;
-                    break;
+                    throw new Exception("Wrong letter!");
             }
         }
 
