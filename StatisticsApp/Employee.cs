@@ -2,7 +2,7 @@
 
 namespace StatisticsApp
 {
-    public class Employee
+    public class Employee : Person
     {
         private List<float> grades = new List<float>();
 
@@ -16,8 +16,6 @@ namespace StatisticsApp
             this.Name = name;
             this.Surname = surname;
         }
-
-        public string Name { get; private set; }
 
         public string Surname { get; private set; }
 
