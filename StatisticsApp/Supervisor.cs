@@ -1,12 +1,10 @@
-﻿using System.Diagnostics;
-
-namespace StatisticsApp
+﻿namespace StatisticsApp
 {
-    public class Employee : IEmployee
+    public class Supervisor : IEmployee
     {
         private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname)
+        public Supervisor(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
@@ -20,39 +18,81 @@ namespace StatisticsApp
         {
             if (grade >= 0 && grade <= 100)
             {
-            this.grades.Add(grade);
+                this.grades.Add(grade);
             }
             else
             {
                 throw new Exception("Invalid grade value!");
-            }           
+            }
         }
 
         public void AddGrade(string grade)
         {
-            if(float.TryParse(grade, out float result))
+            if (float.TryParse(grade, out float result))
             {
-                this.AddGrade(result);                
+                this.AddGrade(result);
             }
-            else
+            else if (!float.TryParse(grade, out float result1))
             {
-                throw new Exception("String is not float.");
+                switch (grade)
+                {
+                    case "6":
+                        this.grades.Add(100);
+                        break;
+                    case "-6":
+                        this.grades.Add(95);
+                        break;
+                    case "+5":
+                        this.grades.Add(85);
+                        break;
+                    case "5":
+                        this.grades.Add(80);
+                        break;
+                    case "-5":
+                        this.grades.Add(75);
+                        break;
+                    case "+4":
+                        this.grades.Add(65);
+                        break;
+                    case "4":
+                        this.grades.Add(60);
+                        break;
+                    case "-4":
+                        this.grades.Add(55);
+                        break;
+                    case "+3":
+                        this.grades.Add(45);
+                        break;
+                    case "3":
+                        this.grades.Add(40);
+                        break;
+                    case "-3":
+                        this.grades.Add(35);
+                        break;
+                    case "+2":
+                        this.grades.Add(25);
+                        break;
+                    case "2":
+                        this.grades.Add(20);
+                        break;
+                    case "-2":
+                        this.grades.Add(15);
+                        break;
+                    case "1":
+                        this.grades.Add(0);
+                        break;
+                    default:
+                        throw new Exception("Invalid grade value");                    
+                }
             }
         }
 
         public void AddGrade(double grade)
         {
             float gradeAsFloat = (float)grade;
-            if (grade >= 0 && grade <= 100)
-            {
-                this.grades.Add(gradeAsFloat);
-            }
-            else
-            {
-                throw new Exception("Invalid grade value!");
-            }
+            this.AddGrade(gradeAsFloat);
         }
-
+                
         public void AddGrade(int grade)
         {
             float gradeAsFloat = grade;
@@ -105,7 +145,7 @@ namespace StatisticsApp
                 }
             }
 
-                statistics.Average /= this.grades.Count;
+            statistics.Average /= this.grades.Count;
 
             switch (statistics.Average)
             {
@@ -124,7 +164,7 @@ namespace StatisticsApp
                 default:
                     statistics.AverageLetter = 'E';
                     break;
-            }            
+            }
             return statistics;
         }
     }
